@@ -10,7 +10,7 @@ int ascii(char * word){
     int i,a;
     for(i=0;i< strlen(word);i++){
         a = word[i];
-        sum += a;
+        sum += (a*a)  ;
         }
     return sum;
     }
