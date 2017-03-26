@@ -7,16 +7,21 @@
 
 %%
 START: VOID MAIN '(' ')' BLK
+	| error { yyerrok ; }
 	;
 BLK:'{' EXP '}'
+	| error { yyerrok ; }
 	;
 EXP: EXP L | L | EXP E | E 
+	| error { yyerrok ; }
 	;
 L: FOR '(' E ')' BLK
+	| error { yyerrok ; }
 	; 
 E: VAL
 	| VAL OP E
 	|
+	| error { yyerrok ; }
 	;
 
 %%
